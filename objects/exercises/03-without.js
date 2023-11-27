@@ -6,6 +6,13 @@
  * @param {?} args - list of properties to remove from object
  * @returns {Object} - New object without listed values
  */
-export const without = (object, ...args) => {
-  throw new Error(`put your solution here ${object} ${args}`);
+const without = (object, ...args) => {
+  let result = { ...object };
+  for (const arg of args)
+    if (result.hasOwnProperty(arg)) {
+      delete result[arg];
+    }
+  return result;
 };
+
+console.log(without({ a: 1, b: 2 }, "b"));
