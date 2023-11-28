@@ -6,6 +6,23 @@
  * @param {Object} object - Object with values of primitive data types
  * @returns {boolean}
  */
-export const isEmpty = (object) => {
-  throw new Error(`put your solution here ${object}`);
+const isEmpty = (object) => {
+  for (let key in object) {
+    if (object.hasOwnProperty(key)) {
+      let value = object[key];
+      if (
+        value !== "" &&
+        value !== null &&
+        !isNaN(value) &&
+        value !== undefined
+      ) {
+        return false;
+      }
+    }
+  }
+  return true;
 };
+
+console.log(isEmpty({}));
+console.log(isEmpty({ a: undefined }));
+console.log(isEmpty({ a: 1 }));

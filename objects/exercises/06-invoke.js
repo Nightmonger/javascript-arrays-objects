@@ -8,6 +8,14 @@
  * @param {Array} [args] - list of args
  * @returns {boolean}
  */
-export const invoke = (object, path, func, args) => {
-  throw new Error(`put your solution here ${object} ${path} ${func} ${args}`);
+const invoke = (object, path, func, args) => {
+  let keys = path.split(".");
+  let target = object;
+
+  for (let key of keys) {
+    target = target[key];
+  }
+  console.log(target);
 };
+
+let x = invoke({ a: { b: [1, 2, 3] } }, "a.b", "splice", [1, 2]);

@@ -5,6 +5,8 @@
  * @param {Object} object - Any object to transform into array
  * @returns {Array} - a deep array
  */
-export const makePairs = (object) => {
-  throw new Error(`put your solution here ${object}`);
+const makePairs = (object) => {
+    return Object.entries(object);
 };
+
+console.log(makePairs({a: 1, b: 2}))

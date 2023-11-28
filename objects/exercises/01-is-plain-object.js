@@ -5,6 +5,16 @@
  * @param element - element to verify
  * @returns {boolean}
  */
-export const isPlainObject = (element) => {
-  throw new Error(`put your solution here ${element}`);
+const isPlainObject = (element) => {
+  if (
+    typeof element == "object" &&
+    (element != null) != Array.isArray(element)
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 };
+
+console.log(isPlainObject({ a: 1 }));
+console.log(isPlainObject([1, 2, 3]));
