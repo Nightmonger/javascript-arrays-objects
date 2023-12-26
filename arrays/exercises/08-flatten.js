@@ -5,6 +5,13 @@
  * @param {Array} array - A deep array
  * @returns {Array}
  */
-export const flatten = (array) => {
-  throw new Error(`put your solution here ${array}`);
+const flatten = (array) => {
+  for (let i = 0; i < array.length; i++) {
+    if (Array.isArray(array[i])) {
+      array.splice(i, 1, ...array[i]);
+    }
+  }
+  return array;
 };
+
+console.log(flatten([1, 2, [3, 4, [5]]]));

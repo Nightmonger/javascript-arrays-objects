@@ -5,6 +5,15 @@
  * @param {Array<string | number>} array - Array of primitive data types
  * @returns {Array}
  */
-export const unique = (array) => {
-  throw new Error(`put your solution here ${array}`);
+const unique = (array) => {
+  let newArray = [];
+  for (let i = 0; i < array.length; i++) {
+    if (!newArray.includes(array[i])) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 };
+
+let array = [1, 2, 3, 1, 2, 4, 4];
+console.log(unique(array));

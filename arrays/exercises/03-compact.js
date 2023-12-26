@@ -5,6 +5,15 @@
  * @param {Array} array - An array of any elements
  * @returns {Array}
  */
-export const compact = (array) => {
-  throw new Error(`put your solution here ${array}`);
+const compact = (array) => {
+  return array.filter(
+    (toFilter) =>
+      toFilter !== false &&
+      toFilter !== undefined &&
+      toFilter !== "" &&
+      toFilter !== 0 &&
+      toFilter !== null,
+  );
 };
+
+console.log(compact([0, 1, false, 2, undefined, "", 3, null]));

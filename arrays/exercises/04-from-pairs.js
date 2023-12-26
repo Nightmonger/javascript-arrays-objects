@@ -5,6 +5,18 @@
  * @param {Array} array - a deep array of pairs
  * @returns {Array}
  */
-export const fromPairs = (array) => {
-  throw new Error(`put your solution here ${array}`);
+const fromPairs = (array) => {
+  let objectToReturn = {};
+  for (let i = 0; i < array.length; ++i) {
+    const [key, value] = array[i];
+    objectToReturn[key] = value;
+  }
+  return objectToReturn;
 };
+
+console.log(
+  fromPairs([
+    ["a", 1],
+    ["b", 2],
+  ]),
+);

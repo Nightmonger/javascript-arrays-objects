@@ -6,6 +6,19 @@
  * @param {Array} secondArray - Array of primitive data types
  * @returns {boolean}
  */
-export const isEqual = (firstArray, secondArray) => {
-  throw new Error(`put your solution here ${firstArray} ${secondArray}`);
+const isEqual = (firstArray, secondArray) => {
+  if (firstArray.length !== secondArray.length) {
+    return false;
+  }
+
+  for (let i = 0; i < firstArray.length; i++) {
+    if (firstArray[i] !== secondArray[i]) {
+      return false;
+    }
+  }
+  return true;
 };
+
+console.log(isEqual([1, 2, 3], [1, 2, 3]));
+console.log(isEqual([1, 2, 5], [1, 2, 3]));
+console.log(isEqual([1, 2, 5], [1, 2, 3, 8]));
